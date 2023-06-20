@@ -2,16 +2,14 @@ package main
 
 import (
 	"database/sql"
-
 	"encoding/csv"
 	"fmt"
 	"log"
 	"os"
 	"strconv"
-
 	_ "modernc.org/sqlite"
 )
-
+// CSV file column name, ToDo: Automate the column name given in the CSV file
 type emp_value struct {
 	emp_id   string
 	emp_name string
@@ -19,16 +17,15 @@ type emp_value struct {
 	role     string
 	dept     string
 }
-
+// To get MYSQL connection
 func getMySQLDB() *sql.DB {
-	//db, err := sql.Open("mysql", "root:@127.0.0.1:3306/employees?parseTime=true")
 	db, err := sql.Open("sqlite", "./sqlite_employees.db")
 	if err != nil {
 		log.Fatal(err)
 	}
 	return db
 }
-
+// Function will import CSV data into SQLite DB
 func main() {
 	var db = getMySQLDB()
 	employees := []emp_value{}
