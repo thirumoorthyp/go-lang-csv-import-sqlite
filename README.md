@@ -21,7 +21,7 @@ go version
 
 # install splite3
 ```shell
-go install sqlite3
+go install sqlite3 or apt-get install sqlite(ubuntu)
 ```
 
 # executing go program
