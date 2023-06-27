@@ -21,7 +21,7 @@ go version
 
 # install splite3
 ```shell
-go install splite3
+go install sqlite3
 ```
 
 # executing go program
