@@ -18,9 +18,9 @@ go version
  set CGO_ENABLED=0
 ```
 
-# install sqlite3
+# install sqlite 
 ``` shell
-go install sqlite3
+go get github.com/modernc.org/sqlite
 ```
 
 # executing go program
