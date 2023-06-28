@@ -8,6 +8,7 @@ import (
 	"os"
 	"strconv"
 	_ "modernc.org/sqlite"
+	"time"
 )
 // CSV file column name, ToDo: Automate the column name given in the CSV file
 type emp_value struct {
@@ -27,6 +28,7 @@ func getMySQLDB() *sql.DB {
 }
 // Function will import CSV data into SQLite DB
 func main() {
+	start := time.Now()
 	var db = getMySQLDB()
 	employees := []emp_value{}
 	file, err := os.Open("employees.csv")
@@ -40,8 +42,9 @@ func main() {
 	}
 	for i := 1; i < len(employees); i++ {
 		emp_id, _ := strconv.Atoi(employees[i].emp_id)
-		fmt.Println(db.Exec("insert into employee_details (emp_id, emp_name, emp_dob, emp_role, emp_dept) values(?,?,?,?,?)", emp_id, employees[i].emp_name, employees[i].dob, employees[i].role, employees[i].dept))
+		db.Exec("insert into employee_details (emp_id, emp_name, emp_dob, emp_role, emp_dept) values(?,?,?,?,?)", emp_id, employees[i].emp_name, employees[i].dob, employees[i].role, employees[i].dept)
 	}
-	fmt.Println(db.Exec("select * from employees"))
-	fmt.Println(employees)
+	//Calculating total execution time
+	elapsed := time.Since(start)
+    fmt.Println("The time of execution of Go program is : %s", elapsed)
 }
