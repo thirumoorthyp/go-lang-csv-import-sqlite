@@ -18,7 +18,7 @@ go version
  set CGO_ENABLED=0
 ```
 
-# install splite3
+# install sqlite3
 ```shell
 go install sqlite3
 ```
