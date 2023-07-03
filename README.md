@@ -30,4 +30,4 @@ go run main.go
 
 This go-lang code is used to import record  one by one from CSV file into the SQLite database.
 
-It took 1.5 sec to import single row.
+It took ***1.5 sec*** to import single row.
