@@ -28,7 +28,7 @@ go get github.com/modernc.org/sqlite
 go run main.go
 ```
 
-This go-lang code is used to import record  one by one from CSV file into the SQLite database.
+This go-lang code is used to import one by one record from CSV file into the SQLite database.
 
-It took ***1.5 sec*** to import single row.
-It look too long compared to Python and PHP. This slow performance is because of - mattn/go-sqlite3#1145
+The first record took ***1.5 sec*** to import a single row.
+It looks too long compared to Python and PHP. This slow performance is because of go-sqlite3 cgo package issue- [Slow performance on insert in ](https://github.com/mattn/go-sqlite3/issues/1145) 
