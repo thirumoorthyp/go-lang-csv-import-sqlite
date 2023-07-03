@@ -1,4 +1,4 @@
-# go-lang-import-csv-into-sqlite
+# Go-lang Import CSV into SQLite
 This go-lang code is used to import data from CSV file into the SQLite database.
 
 # Manual Steps: 
@@ -27,3 +27,7 @@ go get github.com/modernc.org/sqlite
 ```shell
 go run main.go
 ```
+
+This go-lang code is used to import record  one by one from CSV file into the SQLite database.
+
+It took 1.5 sec to import single row.
